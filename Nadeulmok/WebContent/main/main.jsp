@@ -31,7 +31,7 @@
 			<ul class="util">
 			<a href="../member/login.jsp">로그인</a>
 			<a href="../member/join.jsp">회원가입</a>
-            <a href="/login">고객센터</a>
+            <a href="/login">고객센터!</a>
 			</ul>
 			<p>공식메일 <span class="letter_zero">master@sdinsight.co.kr</span></p>
 		</div>
