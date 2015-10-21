@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>È¸¿ø°¡ÀÔ</title>
+<title>íšŒì›ê°€ì…!</title>
 <link rel="stylesheet" type="text/css" href="join.css"/>
 <link rel="stylesheet" type="text/css" href="../css/shadowbox.css"/>
 <script type="text/javascript" src="../js/shadowbox.js"></script>
@@ -16,7 +16,7 @@ $(function(){
 		var email=$('#useremail').val();
 		if(email=="")
 		{
-			$('#emailnull').text("ÀÌ¸ŞÀÏÀ» ÀÔ·ÂÇÏ¼¼¿ä");
+			$('#emailnull').text("ì´ë©”ì¼ì„ ì…ë ¥í•˜ì„¸ìš”");
 			return;
 		}
 		$('#emailnull').text("");
@@ -24,7 +24,7 @@ $(function(){
 		var pwd=$('#userpwd').val();
 		if(pwd=="")
 		{
-			$('#pwdnull').text("ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+			$('#pwdnull').text("ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
 			$('#userpwd').focus();
 			return;
 		}
@@ -34,7 +34,7 @@ $(function(){
 		var name=$('#username').val();
 		if(name=="")
 		{
-			$('#namenull').text("ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä");
+			$('#namenull').text("ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”");
 			$('#username').focus();
 			return;
 		}
@@ -43,7 +43,7 @@ $(function(){
 		var nickname=$('#usernickname').val();
 		if(nickname=="")
 		{
-			$('#nicknamenull').text("º°¸íÀ» ÀÔ·ÂÇÏ¼¼¿ä");
+			$('#nicknamenull').text("ë³„ëª…ì„ ì…ë ¥í•˜ì„¸ìš”");
 			$('#usernickname').focus();
 			return;
 		}
@@ -52,7 +52,7 @@ $(function(){
 		var age=$('#userage').val();
 		if(age=="")
 		{
-			$('#agenull').text("³ªÀÌ¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+			$('#agenull').text("ë‚˜ì´ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
 			$('#userage').focus();
 			return;
 		}
@@ -60,7 +60,7 @@ $(function(){
 		var tel=$('#usertel').val();
 		if(tel=="")
 		{
-			$('#telnull').text("ÀüÈ­¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+			$('#telnull').text("ì „í™”ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
 			$('#usertel').focus();
 			return;
 		}
@@ -69,7 +69,7 @@ $(function(){
 		var intro=$('#userintro').val();
 		if(intro=="")
 		{
-			$('#intronull').text("¼Ò°³¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+			$('#intronull').text("ì†Œê°œë¥¼ ì…ë ¥í•˜ì„¸ìš”");
 			$('#userintro').focus();
 			return;
 		}
@@ -78,7 +78,7 @@ $(function(){
 		var photo=$('#userphoto').val();
 		if(photo=="")
 		{
-			$('#photonull').text("»çÁøÀ» ÀÔ·ÂÇÏ¼¼¿ä");
+			$('#photonull').text("ì‚¬ì§„ì„ ì…ë ¥í•˜ì„¸ìš”");
 			$('#userphoto').focus();
 			return;
 		}
@@ -123,7 +123,7 @@ function ck_age()
 	 var year=parseInt(new Date().getFullYear()); 
 	 var age=document.getElementsByName('age1'); 
 	 var ck=parseInt(age[0].value.substr(0,4)); 
-	 join_form.age.value=(year-ck)+1; // ¿ì¸®³ª¶ó ³ªÀÌ Ç¥½Ã +1 ´õÇÔ 
+	 join_form.age.value=(year-ck)+1; // ìš°ë¦¬ë‚˜ë¼ ë‚˜ì´ í‘œì‹œ +1 ë”í•¨ 
 } 
 
 Shadowbox.init({
@@ -135,7 +135,7 @@ function idcheck()
 	Shadowbox.open({
 		content:'idcheck.jsp',
 		player:'iframe',
-		title:'¾ÆÀÌµğ Áßº¹Ã¼Å©',
+		title:'ì•„ì´ë”” ì¤‘ë³µì²´í¬',
 		width:300,
 		height:150
 	});
@@ -146,7 +146,7 @@ function postfind()
 	Shadowbox.open({
 		content:'postfind.jsp',
 		player:'iframe',
-		title:'¿ìÆí¹øÈ£ °Ë»ö',
+		title:'ìš°í¸ë²ˆí˜¸ ê²€ìƒ‰',
 		width:430,
 		height:350
 	});
@@ -161,10 +161,10 @@ $(function(){
 	  $('#userpwdcheck').keyup(function(){
 	   if($('#userpwd').val()!=$('#userpwdcheck').val()){
 	    $('font[name=pwdcheck]').text('');
-	    $('font[name=pwdcheck]').html("¾ÏÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.");
+	    $('font[name=pwdcheck]').html("ì•”í˜¸ê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 	   }else{
 	    $('font[name=pwdcheck]').text('');
-	    $('font[name=pwdcheck]').html("¾ÏÈ£°¡ ÀÏÄ¡ÇÕ´Ï´Ù.");
+	    $('font[name=pwdcheck]').html("ì•”í˜¸ê°€ ì¼ì¹˜í•©ë‹ˆë‹¤.");
 	   }
 	 }); 
 });
@@ -193,80 +193,80 @@ function ck_phone()
 	  var phoneNumberRegex = /^[0-9]{3}-[0-9]{4}-[0-9]{4}$/;
 	  if(!phoneNumberRegex.test(inputtedPhoneNumber)) {
 	  	 $('font[name=telcheck1]').text('');
-		 $('font[name=telcheck]').html("Àß¸øµÈ Çü½ÄÀÇ ÀüÈ­¹øÈ£ÀÔ´Ï´Ù.");
+		 $('font[name=telcheck]').html("ì˜ëª»ëœ í˜•ì‹ì˜ ì „í™”ë²ˆí˜¸ì…ë‹ˆë‹¤.");
 		 $("#usertel").val("").focus();
 	  }
 	  else
 	 {
 	  	$('font[name=telcheck]').text('');
-	 	$('font[name=telcheck1]').html("¿Ã¹Ù¸¥ Çü½ÄÀÔ´Ï´Ù.");
+	 	$('font[name=telcheck1]').html("ì˜¬ë°”ë¥¸ í˜•ì‹ì…ë‹ˆë‹¤.");
 	  }
  }
 </script>
 </head>
 <body>
   <div id="wrapper">
- 	<center><h3>È¸¿ø °¡ÀÔ Ã¢</h3></center>
+ 	<center><h3>íšŒì› ê°€ì… ì°½</h3></center>
     <form id="joinForm" name="join_form" action="join_ok.jsp">
     
     <p>
-	    <label for="userid">¾ÆÀÌµğ(E-mail)</label>
+	    <label for="userid">ì•„ì´ë””(E-mail)</label>
 	    <input type=text name="email" id="useremail" readonly>
-	    <input type=button value=Áßº¹Ã¼Å© id="useridBtn" onclick="idcheck()">
+	    <input type=button value=ì¤‘ë³µì²´í¬ id="useridBtn" onclick="idcheck()">
 	    <span style="text-align: center; color:red;" id="emailnull"></span>
     </p>
     
     <p>
-	    <label for="userpwd">ºñ¹Ğ¹øÈ£</label>
+	    <label for="userpwd">ë¹„ë°€ë²ˆí˜¸</label>
 	    <input type=password name="pwd" id="userpwd">
-	    <input type=password name="pwdcheck" id="userpwdcheck" placeholder="ÀçÀÔ·Â">
+	    <input type=password name="pwdcheck" id="userpwdcheck" placeholder="ì¬ì…ë ¥">
 	    <font name = "pwdcheck" size="2" color="red"></font>
 	    <span style="text-align: center; color:red;" id="pwdnull"></span>
     </p>
     
     <p>
-	    <label for="username">ÀÌ¸§</label>
+	    <label for="username">ì´ë¦„</label>
 	    <input type=text name="name" id="username">
 	    <span style="text-align: center; color:red;" id="namenull"></span>
 	</p>
    
     <p>
-	    <label for="usernickname">º°¸í</label>
+	    <label for="usernickname">ë³„ëª…</label>
 	    <input type=text name="nickname" id="usernickname">
 	    <span style="text-align: center; color:red;" id="nicknamenull"></span>
     </p>
    
     <p>
-	    <label for="usersex">¼ºº°</label>
-	    <input type=radio name="sex" id="usersex" checked value="³²ÀÚ">³²ÀÚ
-	    <input type=radio name="sex" id="usersex" value="¿©ÀÚ">¿©ÀÚ
+	    <label for="usersex">ì„±ë³„</label>
+	    <input type=radio name="sex" id="usersex" checked value="ë‚¨ì">ë‚¨ì
+	    <input type=radio name="sex" id="usersex" value="ì—¬ì">ì—¬ì
     </p>
   
     <p>
-	    <label for="userbday">»ı³â¿ùÀÏ</label>
+	    <label for="userbday">ìƒë…„ì›”ì¼</label>
 	    <input type=date name="age1" id="userbday" onblur="ck_age()">
-	    <input type="text" name="age" id="userage" size=3 maxlength=3 readonly>¼¼
+	    <input type="text" name="age" id="userage" size=3 maxlength=3 readonly>ì„¸
 	    <span style="text-align: center; color:red;" id="agenull"></span>
     </p>
   
     <p>
-    <label for="usernation">±¹Àû</label>
+    <label for="usernation">êµ­ì </label>
       <select id="usernation" name="nation">
-	      <option>ÇÑ±¹</option>
-	      <option>¹Ì±¹</option>
-	      <option>Áß±¹</option>
-	      <option>µ¶ÀÏ</option>
-	      <option>ÀÏº»</option>
-	      <option>´ë¸¸</option>
-	      <option>ÇÊ¸®ÇÉ</option>
-	      <option>¿µ±¹</option>
-	      <option>ÇÁ¶û½º</option>
-	      <option>ÀÌÅ»¸®¾Æ</option>
+	      <option>í•œêµ­</option>
+	      <option>ë¯¸êµ­</option>
+	      <option>ì¤‘êµ­</option>
+	      <option>ë…ì¼</option>
+	      <option>ì¼ë³¸</option>
+	      <option>ëŒ€ë§Œ</option>
+	      <option>í•„ë¦¬í•€</option>
+	      <option>ì˜êµ­</option>
+	      <option>í”„ë‘ìŠ¤</option>
+	      <option>ì´íƒˆë¦¬ì•„</option>
 	    </select>
     </p>
     
     <p>
-    <label for="usertel">ÀüÈ­¹øÈ£</label>
+    <label for="usertel">ì „í™”ë²ˆí˜¸</label>
     <!-- <span id="cellStyle">
 	    <select id="usertel" name="tel">
 	      <option>010</option>
@@ -283,18 +283,18 @@ function ck_phone()
     </p>
     
     <p>
-    <label for="userlanguage">¾ğ¾î</label>
+    <label for="userlanguage">ì–¸ì–´</label>
     <select id="userlanguage" name="lang">
-	      <option>ÇÑ±¹¾î</option>
-	      <option>¿µ¾î</option>
-	      <option>Áß±¹¾î</option>
-	      <option>µ¶ÀÏ¾î</option>
-	      <option>ÀÏº»¾î</option>
+	      <option>í•œêµ­ì–´</option>
+	      <option>ì˜ì–´</option>
+	      <option>ì¤‘êµ­ì–´</option>
+	      <option>ë…ì¼ì–´</option>
+	      <option>ì¼ë³¸ì–´</option>
 	    </select>
     </p>
     
     <p>
-    <label for="userintro" style="margin-top: 20px">ÀÚ±â¼Ò°³</label>
+    <label for="userintro" style="margin-top: 20px">ìê¸°ì†Œê°œ</label>
     <span id="intoStyle">
     <textarea rows="8" cols="50" id= userintro name=intro></textarea>
     </span>
@@ -303,24 +303,24 @@ function ck_phone()
     </p>
     
     <p>
-    <label for="userpost">ÁÖ¼Ò</label>
+    <label for="userpost">ì£¼ì†Œ</label>
     <span id="cellStyle">
      <input type=text name=post id="userpost" readonly>
-     <input type=button value="¿ìÆí¹øÈ£°Ë»ö" id="userpostBtn" onclick="postfind()">
+     <input type=button value="ìš°í¸ë²ˆí˜¸ê²€ìƒ‰" id="userpostBtn" onclick="postfind()">
      <input type=text name=addr1 id="useraddr1" readonly>
      <input type=text id="useraddr2">
     </span>
     </p>
     
     <p>
-    	 <label for="usernickname">»çÁø</label>
+    	 <label for="usernickname">ì‚¬ì§„</label>
    		 <input type=text name="photo" id="userphoto">
     	 <span style="text-align: center; color:red;" id="photonull"></span>
     </p>
    
     <p class="btnSubmit">
-	    <input type=button id="btnSub" value=È¸¿ø°¡ÀÔ>
-	    <input type=button id="btnCancel" value=°¡ÀÔÃë¼Ò>
+	    <input type=button id="btnSub" value=íšŒì›ê°€ì…>
+	    <input type=button id="btnCancel" value=ê°€ì…ì·¨ì†Œ>
     </p>
     </form>
   </div>
