@@ -11,6 +11,113 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script type="text/javascript">
 
+$(function(){
+	$('#btnSub').click(function(){
+		var email=$('#useremail').val();
+		if(email=="")
+		{
+			$('#emailnull').text("이메일을 입력하세요");
+			return;
+		}
+		$('#emailnull').text("");
+		
+		var pwd=$('#userpwd').val();
+		if(pwd=="")
+		{
+			$('#pwdnull').text("비밀번호를 입력하세요");
+			$('#userpwd').focus();
+			return;
+		}
+		$('#userpwd').text("");
+		
+		
+		var name=$('#username').val();
+		if(name=="")
+		{
+			$('#namenull').text("이름을 입력하세요");
+			$('#username').focus();
+			return;
+		}
+		$('#username').text("");
+
+		var nickname=$('#usernickname').val();
+		if(nickname=="")
+		{
+			$('#nicknamenull').text("별명을 입력하세요");
+			$('#usernickname').focus();
+			return;
+		}
+		$('#usernickname').text("");
+		
+		var age=$('#userage').val();
+		if(age=="")
+		{
+			$('#agenull').text("나이를 입력하세요");
+			$('#userage').focus();
+			return;
+		}
+		
+		var tel=$('#usertel').val();
+		if(tel=="")
+		{
+			$('#telnull').text("전화번호를 입력하세요");
+			$('#usertel').focus();
+			return;
+		}
+		$('#usertel').text("");
+		
+		var intro=$('#userintro').val();
+		if(intro=="")
+		{
+			$('#intronull').text("소개를 입력하세요");
+			$('#userintro').focus();
+			return;
+		}
+		$('#userintro').text("");
+		
+		var photo=$('#userphoto').val();
+		if(photo=="")
+		{
+			$('#photonull').text("사진을 입력하세요");
+			$('#userphoto').focus();
+			return;
+		}
+		$('#userphoto').text("");
+		
+		$('#joinForm').submit();
+	});
+});
+
+$(function(){
+	$('#useremail').keyup(function(){
+		  $('#emailnull').text("");
+	}); 
+	$('#usertel').keyup(function(){
+		  $('#telnull').text("");
+	}); 
+	
+	$('#userintro').keyup(function(){
+		  $('#intronull').text("");
+	});
+	
+	$('#userphoto').keyup(function(){
+		  $('#photonull').text("");
+	});
+	$('#usernickname').keyup(function(){
+		  $('#nicknamenull').text("");
+	}); 
+	
+	$('#username').keyup(function(){
+		  $('#namenull').text("");
+	}); 
+	
+	$('#userbday').text("");
+	$('#userbday').keyup(function(){
+		  $('#agenull').text("");
+	}); 
+});
+
+
 function ck_age() 
 { 
 	 var year=parseInt(new Date().getFullYear()); 
@@ -22,6 +129,7 @@ function ck_age()
 Shadowbox.init({
    players:["iframe"]		
 });
+
 function idcheck()
 {
 	Shadowbox.open({
@@ -32,6 +140,7 @@ function idcheck()
 		height:150
 	});
 }
+
 function postfind()
 {
 	Shadowbox.open({
@@ -44,12 +153,13 @@ function postfind()
 }
 
 $(function(){
-	  $('#pwd').keyup(function(){
-	   $('font[name=check]').text('');
+	  $('#userpwd').keyup(function(){
+		  $('#pwdnull').text("");
+	   $('font[name=pwdcheck]').text('');
 	  }); //#user_pass.keyup
 
-	  $('#pwdCheck').keyup(function(){
-	   if($('#pwd').val()!=$('#pwdCheck').val()){
+	  $('#userpwdcheck').keyup(function(){
+	   if($('#userpwd').val()!=$('#userpwdcheck').val()){
 	    $('font[name=pwdcheck]').text('');
 	    $('font[name=pwdcheck]').html("암호가 일치하지 않습니다.");
 	   }else{
@@ -59,7 +169,7 @@ $(function(){
 	 }); 
 });
 
-  function phoneCheck(obj) {
+function phoneCheck(obj) {
     var n = obj.value.replace(/\-/g, "");
     var len = n.length;
     var number=n;
@@ -77,56 +187,68 @@ $(function(){
     obj.value = number;
   }
   
-  function ck_phone()
+function ck_phone()
   {
-	  var inputtedPhoneNumber = $("#tel").val();
+	  var inputtedPhoneNumber = $("#usertel").val();
 	  var phoneNumberRegex = /^[0-9]{3}-[0-9]{4}-[0-9]{4}$/;
 	  if(!phoneNumberRegex.test(inputtedPhoneNumber)) {
 	  	 $('font[name=telcheck1]').text('');
 		 $('font[name=telcheck]').html("잘못된 형식의 전화번호입니다.");
+		 $("#usertel").val("").focus();
 	  }
 	  else
 	 {
 	  	$('font[name=telcheck]').text('');
 	 	$('font[name=telcheck1]').html("올바른 형식입니다.");
 	  }
-  }
+ }
 </script>
 </head>
 <body>
   <div id="wrapper">
  	<center><h3>회원 가입 창</h3></center>
     <form id="joinForm" name="join_form" action="join_ok.jsp">
+    
     <p>
-    <label for="userid">아이디(E-mail)</label>
-    <input type=text name="email" id="userid" readonly>
-    <input type=button value=중복체크 id="useridBtn" onclick="idcheck()">
+	    <label for="userid">아이디(E-mail)</label>
+	    <input type=text name="email" id="useremail" readonly>
+	    <input type=button value=중복체크 id="useridBtn" onclick="idcheck()">
+	    <span style="text-align: center; color:red;" id="emailnull"></span>
     </p>
+    
     <p>
-    <label for="userpwd">비밀번호</label>
-    <input type=password name="pwd" id="pwd">
-    <input type=password name="pwdCheck" id="pwdCheck" placeholder="재입력">
-    <font name = "pwdcheck" size="2" color="red"></font>
+	    <label for="userpwd">비밀번호</label>
+	    <input type=password name="pwd" id="userpwd">
+	    <input type=password name="pwdcheck" id="userpwdcheck" placeholder="재입력">
+	    <font name = "pwdcheck" size="2" color="red"></font>
+	    <span style="text-align: center; color:red;" id="pwdnull"></span>
     </p>
+    
     <p>
-    <label for="username">이름</label>
-    <input type=text name="name" id="username">
-    <font name = "namecheck" size="2" color="red"></font>
-    </p>
+	    <label for="username">이름</label>
+	    <input type=text name="name" id="username">
+	    <span style="text-align: center; color:red;" id="namenull"></span>
+	</p>
+   
     <p>
-    <label for="usernickname">별명</label>
-    <input type=text name="nickname" id="usernickname">
+	    <label for="usernickname">별명</label>
+	    <input type=text name="nickname" id="usernickname">
+	    <span style="text-align: center; color:red;" id="nicknamenull"></span>
     </p>
+   
     <p>
-    <label for="usersex">성별</label>
-    <input type=radio name="sex" id="usersex" checked value="남자">남자
-    <input type=radio name="sex" id="usersex" value="여자">여자
+	    <label for="usersex">성별</label>
+	    <input type=radio name="sex" id="usersex" checked value="남자">남자
+	    <input type=radio name="sex" id="usersex" value="여자">여자
     </p>
+  
     <p>
-    <label for="userbday">생년월일</label>
-     <input type=date name="age1" id="userbday" onblur="ck_age()">
-    <input type="text" name="age" size=3 maxlength=3 readonly>세
+	    <label for="userbday">생년월일</label>
+	    <input type=date name="age1" id="userbday" onblur="ck_age()">
+	    <input type="text" name="age" id="userage" size=3 maxlength=3 readonly>세
+	    <span style="text-align: center; color:red;" id="agenull"></span>
     </p>
+  
     <p>
     <label for="usernation">국적</label>
       <select id="usernation" name="nation">
@@ -154,9 +276,10 @@ $(function(){
 	    <input type=text name="tel2" id="usertel1">-
 	    <input type=text name="tel3" id="usertel2">
     </span> -->
-    <input type=text name="tel" id="tel" onkeyup="phoneCheck(this)" maxlength="13" onblur=ck_phone()>
+    <input type=text name="tel" id="usertel" onkeyup="phoneCheck(this)" maxlength="13" onblur=ck_phone()>
     <font name="telcheck" size="2" color="red"></font>
     <font name="telcheck1" size="2" color="blue"></font>
+    <span style="text-align: center; color:red;" id="telnull"></span>
     </p>
     
     <p>
@@ -171,10 +294,12 @@ $(function(){
     </p>
     
     <p>
-    <label for="userintro" id = introduce style="margin-top: 20px">자기소개</label>
+    <label for="userintro" style="margin-top: 20px">자기소개</label>
     <span id="intoStyle">
-    <textarea rows="8" cols="50" name=intro></textarea>
+    <textarea rows="8" cols="50" id= userintro name=intro></textarea>
     </span>
+    <br>
+    <span style="text-align: center; color:red;" id="intronull"></span>
     </p>
     
     <p>
@@ -186,18 +311,19 @@ $(function(){
      <input type=text id="useraddr2">
     </span>
     </p>
-     <p>
-    <label for="usernickname">사진</label>
-    <input type=text name="photo" id="usernickname">
+    
+    <p>
+    	 <label for="usernickname">사진</label>
+   		 <input type=text name="photo" id="userphoto">
+    	 <span style="text-align: center; color:red;" id="photonull"></span>
     </p>
    
     <p class="btnSubmit">
-    <input type=submit id="btnSub" value=회원가입>
-    <input type=button id="btnCancel" value=가입취소>
+	    <input type=button id="btnSub" value=회원가입>
+	    <input type=button id="btnCancel" value=가입취소>
     </p>
     </form>
   </div>
 </body>
 </html>
-
 
