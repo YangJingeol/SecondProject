@@ -50,7 +50,8 @@ $(function(){
 });
 
 function ok(){
-	parent.join_form.email.value=email;
+	var hasEmail = $('#hasEmail').val();
+	parent.join_form.email.value=hasEmail;
 	parent.Shadowbox.close();
 };
 </script>
@@ -74,6 +75,15 @@ function ok(){
     		<span style="text-align: center;color:red;" id="emailSpan"></span>
 			<input type = hidden value="<%=count %>" id="hasId">
 			<input type = hidden value="<%=email %>" id="hasEmail">
+			<%
+				if(email != "default" && count == 0)
+				{
+			%>
+				<br><br>
+				<input type=button id= "checkBtn" value="È®ÀÎ" onclick=ok()>
+			<% 
+				} 
+			%>
     	</form>
 		</div>
 	</center>
